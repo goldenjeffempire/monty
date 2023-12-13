@@ -1,8 +1,4 @@
 #include "monty.h"
-void print_char(stack_t **stack, unsigned int line_number);
-void print_str(stack_t **stack, __attribute__((unused))unsigned int ln);
-void rotl(stack_t **stack, __attribute__((unused))unsigned int ln);
-void rotr(stack_t **stack, __attribute__((unused))unsigned int ln);
 
 /**
  * display_char - prints the characters Ascii value.
