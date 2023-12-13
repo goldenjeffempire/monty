@@ -1,9 +1,5 @@
 #include "monty.h"
 
-void handle_error(int error_code, ...);
-void handle_additional_error(int error_code, ...);
-void handle_string_error(int error_code, ...);
-
 /**
  * handle_error - Display appropriate error based on error codes.
  * @error_code: The error codes and their meanings:
@@ -16,7 +12,8 @@ void handle_string_error(int error_code, ...);
  * (7) -> Stack is empty for the "pop" instruction.
  * (8) -> Stack is too short for the specified operation
  * Return: void
- */
+**/
+
 void handle_error(int error_code, ...)
 {
 	va_list ag;
@@ -47,7 +44,7 @@ void handle_error(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	release_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -59,7 +56,8 @@ void handle_error(int error_code, ...)
  * (8) -> Stack is too short for the operation.
  * (9) -> Division by zero.
  * Return: void
- */
+**/
+
 void handle_additional_error(int error_code, ...)
 {
 	va_list ag;
@@ -89,7 +87,7 @@ void handle_additional_error(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	release_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -99,7 +97,8 @@ void handle_additional_error(int error_code, ...)
  * (10) -> Number inside a node is outside ASCII bounds.
  * (11) -> Stsck is empty
  * Return: void
- */
+**/
+
 void handle_string_error(int error_code, ...)
 {
 	va_list ag;
@@ -118,6 +117,6 @@ void handle_string_error(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	release_nodes();
 	exit(EXIT_FAILURE);
 }
