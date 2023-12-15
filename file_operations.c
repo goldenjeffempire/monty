@@ -60,7 +60,7 @@ int parse_line(char *lineptr, int line_number, int format)
 	char *value;
 
 	if (lineptr == NULL)
-		err(4);
+		handle_error(4);
 	delim = "\n ";
 	opcode = strtok(lineptr, delim);
 
@@ -151,11 +151,11 @@ void execute_func(op_func f, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			handle_error(5, ln);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, ln);
+				handle_error(5, ln);
 		}
 		node = generate_node(atoi(val) * flag);
 		if (format == 0)
