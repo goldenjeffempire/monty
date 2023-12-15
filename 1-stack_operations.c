@@ -1,10 +1,5 @@
 #include "monty.h"
 
-void push_to_stack(stack_t **new_node, __attribute__((unused))unsigned int ln);
-void enqueue(stack_t **new_node, __attribute__((unused))unsigned int ln);
-void display_stack(stack_t **stack, unsigned int line_number);
-void display_top(stack_t **stack, unsigned int line_number);
-void remove_top(stack_t **stack, unsigned int line_number);
 /**
  * push_to_stack - Adds a node to the beginning of the stack (LIFO).
  * @new_node: Pointer to the new node.
